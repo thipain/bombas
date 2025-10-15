@@ -7,6 +7,7 @@
     <title>AB Bombas - Ferramentas Profissionais</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/carrinho.css">
 </head>
 
 <body>
@@ -27,12 +28,12 @@
         </div>
     </div>
 
-    <nav class="navbar"> 
+    <nav class="navbar">
         <div class="navbar-content">
             <div class="logo">
                 <a href="index.php">
-                <img src="assets/images/abbombas.png" alt="Logo AB Bombas">
-                AB Bombas
+                    <img src="assets/images/abbombas.png" alt="Logo AB Bombas">
+                    AB Bombas
                 </a>
             </div>
 
@@ -42,7 +43,7 @@
             </div>
 
             <div class="cart-whatsapp">
-                <a href="#" class="cart-btn" onclick="openCart()">
+                <a href="#" class="cart-btn" onclick="abrirCarrinho(); return false;">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-badge" id="cartCount">0</span>
                 </a>
@@ -53,3 +54,6 @@
             </div>
         </div>
     </nav>
+
+    <!-- Script do Carrinho -->
+    <script src="assets/js/carrinho.js"></script>
