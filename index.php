@@ -42,210 +42,21 @@ if (empty($slides)) {
 }
 ?>
 
-<link rel="stylesheet" href="assets/css/carrinho.css">
-
-<style>
-    /* ===== PRODUTOS GRID ===== */
-    .products-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 25px;
-        padding: 20px 0;
-    }
-
-    .product-card {
-        background: #fff;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-
-    .product-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .product-badge {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: linear-gradient(135deg, #FF6B35 0%, #FFA630 100%);
-        color: white;
-        padding: 8px 16px;
-        border-radius: 25px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        z-index: 2;
-        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-    }
-
-    /* ===== IMAGEM DO PRODUTO ===== */
-    .product-img {
-        position: relative;
-        width: 100%;
-        height: 200px;
-        overflow: hidden;
-        background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    .product-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        transition: transform 0.3s ease;
-    }
-
-    .product-img i {
-        font-size: 4rem;
-        color: #ddd;
-        opacity: 0.5;
-    }
-
-    .product-card:hover .product-img img {
-        transform: scale(1.1);
-    }
-
-    /* ===== DETALHES DO PRODUTO ===== */
-    .product-details {
-        padding: 20px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .product-category {
-        font-size: 0.75rem;
-        color: #FF6B35;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 10px;
-    }
-
-    .product-name {
-        font-size: 1rem;
-        font-weight: 700;
-        color: #1A1A2E;
-        margin-bottom: 10px;
-        line-height: 1.3;
-        min-height: 2.6em;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .product-description {
-        font-size: 0.85rem;
-        color: #666;
-        margin-bottom: 15px;
-        flex-grow: 1;
-        line-height: 1.4;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    /* ===== RODAPÉ DO CARD ===== */
-    .product-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 15px;
-        border-top: 1px solid #f0f0f0;
-        margin-top: auto;
-    }
-
-    .product-price {
-        font-size: 1.3rem;
-        font-weight: 800;
-        color: #004E89;
-    }
-
-    .add-cart-btn {
-        background: linear-gradient(135deg, #FF6B35 0%, #FFA630 100%);
-        color: white;
-        border: none;
-        padding: 12px 20px;
-        border-radius: 25px;
-        cursor: pointer;
-        font-weight: 700;
-        font-size: 0.85rem;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        white-space: nowrap;
-    }
-
-    .add-cart-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
-    }
-
-    .add-cart-btn:active {
-        transform: scale(0.95);
-    }
-
-    @media (max-width: 768px) {
-        .products-grid {
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 15px;
-        }
-
-        .product-img {
-            height: 180px;
-        }
-
-        .product-img i {
-            font-size: 3rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .products-grid {
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 10px;
-        }
-
-        .product-img {
-            height: 150px;
-        }
-
-        .product-img i {
-            font-size: 2.5rem;
-        }
-
-        .product-details {
-            padding: 15px;
-        }
-    }
-</style>
+<link href="assets/css/carrinho.css" rel="stylesheet" />
 
 <!-- Hero Slider -->
 <section class="hero-slider">
     <?php foreach ($slides as $index => $slide): ?>
-        <div class="slide <?= $index === 0 ? 'active' : '' ?>" style="background-image: url('<?= $slide['imagem_url'] ?>');">
+        <div class="slide <?= $index === 0 ? 'active' : '' ?>">
             <div class="slide-content">
                 <h1><?= htmlspecialchars($slide['titulo']) ?></h1>
                 <p><?= htmlspecialchars($slide['subtitulo']) ?></p>
-                <a href="<?= $slide['link_botao'] ?>" class="cta-btn">
+                <a class="cta-btn" href="<?= $slide['link_botao'] ?>">
                     <?= htmlspecialchars($slide['texto_botao']) ?>
                 </a>
             </div>
         </div>
     <?php endforeach; ?>
-
     <!-- Botões de Navegação -->
     <button class="slider-btn prev" onclick="moveSlide(-1)">
         <i class="fas fa-chevron-left"></i>
@@ -253,7 +64,6 @@ if (empty($slides)) {
     <button class="slider-btn next" onclick="moveSlide(1)">
         <i class="fas fa-chevron-right"></i>
     </button>
-
     <!-- Dots de Navegação -->
     <div class="slider-dots">
         <?php foreach ($slides as $index => $slide): ?>
@@ -261,7 +71,6 @@ if (empty($slides)) {
         <?php endforeach; ?>
     </div>
 </section>
-
 <!-- Barra de Categorias -->
 <section class="categories-bar">
     <div class="categories-container">
@@ -276,7 +85,7 @@ if (empty($slides)) {
             </div>
             <div class="category-item">
                 <i class="fas fa-tint"></i>
-                <span>Bombas D'água</span>
+                <span>Bombas Dágua</span>
             </div>
             <div class="category-item">
                 <i class="fas fa-wind"></i>
@@ -301,7 +110,6 @@ if (empty($slides)) {
         </div>
     </div>
 </section>
-
 <!-- Seção de Produtos -->
 <section class="products-section" id="produtos">
     <div class="section-header">
@@ -323,7 +131,6 @@ if (empty($slides)) {
             </select>
         </div>
     </div>
-
     <div class="products-grid">
         <?php if ($result->num_rows > 0): ?>
             <?php while ($row = $result->fetch_assoc()): ?>
@@ -339,36 +146,27 @@ if (empty($slides)) {
                 }
                 ?>
 
-                <div class="product-card"
-                    data-category="<?= htmlspecialchars($row['categoria']) ?>"
-                    data-price="<?= $row['preco'] ?>"
-                    data-name="<?= htmlspecialchars($row['nome']) ?>"
-                    data-produto-id="<?= $row['id'] ?>">
+                <div class="product-card" data-category="<?= htmlspecialchars($row['categoria']) ?>" data-name="<?= htmlspecialchars($row['nome']) ?>" data-price="<?= $row['preco'] ?>" data-produto-id="<?= $row['id'] ?>">
                     <?php if ($row['badge']): ?>
                         <span class="product-badge"><?= htmlspecialchars($row['badge']) ?></span>
                     <?php endif; ?>
-
-                    <a href="produto.php?id=<?= $row['id'] ?>" style="text-decoration: none; color: inherit;">
+                    <a href="produto.php?id=<?= $row['id'] ?>">
                         <div class="product-img">
                             <?php if ($primeiraImagem): ?>
-                                <img src="<?= htmlspecialchars($primeiraImagem) ?>" alt="<?= htmlspecialchars($row['nome']) ?>" loading="lazy">
+                                <img alt="<?= htmlspecialchars($row['nome']) ?>" loading="lazy" src="<?= htmlspecialchars($primeiraImagem) ?>" />
                             <?php else: ?>
                                 <i class="<?= $row['icon'] ?? 'fas fa-box' ?>"></i>
                             <?php endif; ?>
                         </div>
                     </a>
-
                     <div class="product-details">
                         <div class="product-category"><?= htmlspecialchars($row['categoria']) ?: 'Geral' ?></div>
-
-                        <a href="produto.php?id=<?= $row['id'] ?>" style="text-decoration: none; color: inherit;">
+                        <a href="produto.php?id=<?= $row['id'] ?>">
                             <h3 class="product-name"><?= htmlspecialchars($row['nome']) ?></h3>
                         </a>
-
                         <p class="product-description">
                             <?= substr(htmlspecialchars($row['descricao']), 0, 80) ?>...
                         </p>
-
                         <div class="product-footer">
                             <span class="product-price">R$ <?= number_format($row['preco'], 2, ',', '.') ?></span>
                             <button class="add-cart-btn" onclick="event.stopPropagation(); adicionarAoCarrinho(<?= $row['id'] ?>)">
@@ -379,23 +177,20 @@ if (empty($slides)) {
                 </div>
             <?php endwhile; ?>
         <?php else: ?>
-            <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
-                <i class="fas fa-inbox" style="font-size: 4rem; color: #ccc; margin-bottom: 20px;"></i>
-                <h3 style="color: #666; font-size: 1.5rem;">Nenhum produto cadastrado ainda</h3>
-                <p style="color: #999; margin-top: 10px;">Em breve teremos novidades!</p>
+            <div>
+                <i class="fas fa-inbox"></i>
+                <h3>Nenhum produto cadastrado ainda</h3>
+                <p>Em breve teremos novidades!</p>
             </div>
         <?php endif; ?>
     </div>
 </section>
-
 <!-- Botão Flutuante WhatsApp -->
-<a href="https://wa.me/5511992810035" class="floating-cart" target="_blank">
+<a class="floating-cart" href="https://wa.me/5511992810035" target="_blank">
     <i class="fab fa-whatsapp"></i>
     <span class="floating-cart-badge">!</span>
 </a>
-
 <script src="assets/js/carrinho.js"></script>
-
 <script>
     // ===== SLIDER =====
     let currentSlideIndex = 0;
@@ -609,5 +404,4 @@ if (empty($slides)) {
         });
     }
 </script>
-
 <?php include 'includes/footer.php'; ?>
