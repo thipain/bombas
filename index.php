@@ -186,7 +186,7 @@ if (empty($slides)) {
     </div>
 </section>
 <!-- Botão Flutuante WhatsApp -->
-<a class="floating-cart" href="https://wa.me/5511992810035" target="_blank">
+<a class="floating-cart" href="https://wa.me/551141602205" target="_blank">
     <i class="fab fa-whatsapp"></i>
     <span class="floating-cart-badge">!</span>
 </a>

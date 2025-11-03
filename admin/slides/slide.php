@@ -1,5 +1,6 @@
 <?php
 include '../../config/conexao.php';
+require_once 'auth.php';
 
 // Buscar slides ordenados
 $sql = "SELECT * FROM slides ORDER BY ordem ASC, id ASC";

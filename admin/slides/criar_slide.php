@@ -1,5 +1,6 @@
 <?php
 include '../../config/conexao.php';
+require_once 'auth.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $titulo = trim($_POST['titulo']);

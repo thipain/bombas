@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../config/conexao.php';
+require_once 'auth.php';
 
 // Estatísticas rápidas
 $totalProdutos = $conn->query("SELECT COUNT(*) as total FROM produtos")->fetch_assoc()['total'];
@@ -503,7 +504,7 @@ $ultimosProdutos = $conn->query($sqlUltimosProdutos);
                 </div>
             </div>
             <div class="top-bar-actions">
-                <a href="../../index.php" class="btn-site" target="_blank">
+                <a href="../index.php" class="btn-site" target="_blank">
                     <i class="fas fa-external-link-alt"></i>
                     Ver Site
                 </a>

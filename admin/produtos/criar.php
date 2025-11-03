@@ -1,5 +1,6 @@
 <?php
 include '../../config/conexao.php';
+require_once '../auth.php';
 
 $mensagem_upload = '';
 $tipo_mensagem = '';

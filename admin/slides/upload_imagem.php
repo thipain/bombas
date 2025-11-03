@@ -1,5 +1,6 @@
 <?php
 // upload_imagem.php
+require_once 'auth.php';
 header('Content-Type: application/json');
 
 // Configurações de upload

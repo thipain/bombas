@@ -1,5 +1,6 @@
 <?php 
 include '../../config/conexao.php';
+require_once '../auth.php';
 
 // Buscar produtos
 $sql = "SELECT * FROM produtos ORDER BY id DESC";

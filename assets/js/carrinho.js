@@ -335,7 +335,7 @@ function limparCarrinho() {
 // Finalizar pedido via WhatsApp
 function finalizarPedidoWhatsApp() {
     const mensagem = carrinho.gerarMensagemWhatsApp();
-    const numeroWhatsApp = '5511992810035'; // Seu número
+    const numeroWhatsApp = '551141602205'; // Seu número
     const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
     window.open(url, '_blank');
 }

@@ -1,5 +1,6 @@
 <?php
 include '../../config/conexao.php';
+require_once 'auth.php';
 
 // Verificar se o ID foi passado
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {

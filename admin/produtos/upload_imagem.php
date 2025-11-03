@@ -1,5 +1,6 @@
 <?php
 include '../../config/conexao.php';
+require_once '../auth.php';
 
 // Validar requisição
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_FILES['imagem']) || !isset($_POST['produto_id'])) {

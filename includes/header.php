@@ -15,7 +15,7 @@
     <div class="top-bar">
         <div class="top-bar-content">
             <div>
-                <i class="fas fa-phone"></i> (11) 99281-0035
+                <i class="fas fa-phone"></i> (11) 41602205
                 <span style="margin-left: 20px;">
                     <i class="fas fa-envelope"></i> contato@abbombas.com.br
                 </span>
@@ -47,7 +47,7 @@
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-badge" id="cartCount">0</span>
                 </a>
-                <a href="https://wa.me/5511992810035" class="whatsapp-header-btn" target="_blank">
+                <a href="https://wa.me/551141602205" class="whatsapp-header-btn" target="_blank">
                     <i class="fab fa-whatsapp"></i>
                     WhatsApp
                 </a>

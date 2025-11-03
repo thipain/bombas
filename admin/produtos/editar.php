@@ -1,5 +1,6 @@
 <?php
 include '../../config/conexao.php';
+require_once '../auth.php';
 
 $id = $_GET['id'] ?? 0;
 $sql = "SELECT * FROM produtos WHERE id=$id";
